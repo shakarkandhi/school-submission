@@ -1,0 +1,108 @@
+<Function>:
+	
+	
+	Screen:
+		name:'home'
+		MDToolbar:
+			title : 'HOME - QR Code'
+			font_style: 'H5'
+			pos_hint:{"top":1}
+			specific_text_color:1,1,1,1
+			elevation:8
+		BoxLayout:
+			size_hint_y:.35
+			pos_hint:{'center_y':.65}
+			padding:10
+			Image:
+				id:img_
+				source: 'files/home.png'
+		MDRectangleFlatButton:
+			text:'Generate QR Code'
+			icon: 'cloud-search'
+			on_release: root.current="gen"
+			pos_hint:{'center_x':.5,'center_y':.50}
+        MDRectangleFlatButton:
+			text:'Read QR Code'
+			icon: 'cloud-search'
+			on_release: root.current="read"
+			pos_hint:{'center_x':.5,'center_y':.35}
+	
+	
+	Screen:
+		name: 'gen'
+		MDToolbar:
+			title : 'QR Code Generator'
+			font_style: 'H5'
+			pos_hint:{"top":1}
+			specific_text_color:1,1,1,1
+			elevation:8
+		BoxLayout:
+			size_hint_y:.1
+			padding: "10dp"
+			pos_hint:{'center_y':.7}
+			MDTextField:
+				id:link_text
+				hint_text:'Enter Your DATA / URL to Generate QR Code'
+				icon_right: 'link'
+		MDRectangleFlatButton:
+			text:'Generate'
+			on_release: root.generate_qr_code(root)
+			pos_hint:{'center_x':.5,'center_y':.6}
+		MDRectangleFlatButton:
+			text:'Back'
+			on_release: root.current="home"
+			pos_hint:{'center_x':.5,'center_y':.1}
+
+	
+	Screen:
+		name:'image'
+		BoxLayout:
+			size_hint_y:.6
+			pos_hint:{'center_y':.56}
+			padding:10
+			Image:
+				id:img_
+		MDLabel:
+			text:"QR Code"
+			font_style:'H4'
+			pos_hint:{'center_y':.9}
+			halign:'center'
+		MDRectangleFlatButton:
+			text:'Make Another'
+			on_release: root.make_another(root)
+			pos_hint:{'center_x':.5,'center_y':.1}
+
+	
+	Screen:
+		name:'read'
+        Camera:
+            id: camera
+            play: True
+        MDRectangleFlatButton:
+            text: 'Read'
+            pos_hint:{'center_x':.4,'center_y':.1}
+            on_press: root.read(root)
+		MDRectangleFlatButton:
+			text:'Back'
+			on_release: root.current="home"
+			pos_hint:{'center_x':.6,'center_y':.1}
+    Screen:
+        name:'opt'
+        MDToolbar:
+            title : 'Output'
+            font_style: 'H5'
+            pos_hint:{"top":1}
+            specific_text_color:1,1,1,1
+            elevation:8
+        MDLabel:
+            id:output
+            text:''
+			font_style:'H4'
+			pos_hint:{'center_y':.7}
+    		halign:'center'
+		MDRectangleFlatButton:
+    		text:'Back'
+    		on_release: root.current="read"
+			pos_hint:{'center_x':.5,'center_y':.1}
+        
+    

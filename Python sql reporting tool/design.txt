@@ -1,0 +1,2 @@
+App Name: SQL Reporting Tool
+Description: This  app wil first select a table from a SQL Database then sort it by data taken from the user via a gui

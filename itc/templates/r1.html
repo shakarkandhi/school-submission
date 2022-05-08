@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Energy Consumption Report</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <body>
+    <header>
+        <div class="r1">
+            <h1>Report</h1>
+            <form action="{{url_for('data_r1') }}" method='GET'>
+              <label for="fromdt">From:</label>
+              <input type="datetime-local" id="fromdt" name="fromdt"step="1">
+              <label for="fromdt">Format:(MM/DD/YYYY HH:MM:SS)</label><br><br>
+              <label for="todt">To:</label>
+              <input type="datetime-local" id="todt" name="todt"step="1">
+              <label for="fromdt">Format:(MM/DD/YYYY HH:MM:SS)</label><br><br>
+              <br><br>  <input type="submit" value="Print">
+            </form><br><br>
+        </div>
+    </header>
+    </body>
+</html>

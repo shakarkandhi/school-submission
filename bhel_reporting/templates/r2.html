@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Report 2</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <body>
+    <header>
+        <div class="r2">
+          <img src="{{url_for('static', filename='logo.png')}}" width='100' id='logo'/>
+            <h1>Report 2</h1>
+
+
+            <form action="{{url_for('data_r2') }}" method='GET'>
+              <label for="fromdt">From:</label>
+              <input type="datetime-local" id="fromdt" name="fromdt"step="1">
+              <label for="fromdt">Format:(MM/DD/YYYY HH:MM:SS)</label><br><br>
+              <label for="todt">To:</label>
+              <input type="datetime-local" id="todt" name="todt"step="1">
+              <label for="fromdt">Format:(MM/DD/YYYY HH:MM:SS)</label><br><br>
+              <label for="sensor">Sensor:</label>
+              <input list="sensor" name="sensor">
+                  <datalist id="sensor">
+
+                    <option value="axes_hydrostatic_tank_level">
+                    <option value="main_hydraulic_tank_level">
+                    <option value="table_hydrostatic_tank_level">
+                    <option value="oil_level_of_coolant_tank">
+                    <option value="hydraulic_unit_oil_pump_22m2_current_r">
+                    <option value="vibration_of_hydraulic_unit_oil_pump_22m2">
+                    <option value="flow_of_hydraulic_unit_oil_pump_22m2">
+                    <option value="pressure_of_hydraulic_unit_oil_pump_22m2">
+                    <option value="hydraulic_unit_oil_pump_22m6_current_r">
+                    <option value="vibration_of_hydraulic_unit_oil_pump_22m6">
+                    <option value="flow_of_hydraulic_unit_oil_pump_22m6">
+                    <option value="pressure_of_hydraulic_unit_oil_pump_22m6">
+                    <option value="gearbox_oil_delivery_pump_39m2_current_r">
+                    <option value="vibration_of_gearbox_oil_delivery_pump_39m2">
+                    <option value="flow_of_gearbox_oil_delivery_pump_39m2">
+                    <option value="pressure_of_gearbox_oil_delivery_pump_39m2">
+                    <option value="gearbox_oil_delivery_pump_39m3_current_r">
+                    <option value="vibration_of_gearbox_oil_delivery_pump_39m3">
+                    <option value="flow_of_gearbox_oil_delivery_pump_39m3">
+                    <option value="pressure_of_gearbox_oil_delivery_pump_39m3">
+                    <option value="oil_delivery_pump_tp_x_pockets_40m2_current_r">
+                    <option value="vibration_of_oil_delivery_pump_tp_x_pockets_40m2">
+                    <option value="flow_of_oil_delivery_pump_tp_x_pockets_40m2">
+                    <option value="pressure_of_oil_delivery_pump_tp_x_pockets_40m2">
+                    <option value="oil_delivery_pump_tp_y_pockets_40m4_current_r">
+                    <option value="vibraton_of_oil_delivery_pump_tp_x_pockets_40m4">
+                    <option value="flow_of_oil_delivery_pump_tp_x_pockets_40m4">
+                    <option value="pressure_of_oil_delivery_pump_tp_x_pockets_40m4">
+                    <option value="vibraton_of_right_side_lead_screw">
+                    <option value="vibraton_of_left_side_lead_screw">
+                    <option value="temperature_of_right_side_lead_screw">
+                    <option value="temperature_of_left_side_lead_screw">
+                    <option value="vibraton_of_cross_rail_motor">
+                    <option value="temp_axes_hydrostatic_tank">
+                    <option value="temp_main_hydraulic_tank">
+                    <option value="temp_table_hydrostatic_tank">
+                    <option value="cs1000_axes_hydrostatics_tank">
+                    <option value="cs1000_main_hydraulic_tank">
+                    <option value="cs1000_table_hydrostatics_tank">
+                    <option value="dew_point">
+                    <option value="inclination_x">
+                    <option value="inclination_y">
+                    <option value="cross_rail_lub_tank_level">
+                    <option value="table_vibration">
+                    <option value="air_pressure_inlet_line">
+                    <option value="main_hydraulic_tank_22m5_flow">
+                    <option value="main_hydraulic_tank_22m5_pressure">
+                    <option value="table_hydrostatics_40m6_flow">
+                    <option value="table_hydrostatics_40m6_pressure">
+                    <option value="cross_rail_vfd_current">
+                    <option value="lub_pump_for_sw_220_tank">
+                    <option value="main_supply_current_R">
+                    <option value="main_supply_voltage_R">
+                    <option value="main_supply_voltage_y">
+                    <option value="main_supply_voltage_b">
+                    <option value="Running_load_KW">
+                    <option value="MAIN_SUPPLY_energy">
+
+
+                  </datalist><br><br>
+              <label for="setval1">Less Than:</label>
+              <input type="number" id="setval1" name="setval1" step=0.01><br><br>
+              <label for="setval2">Greater Than:</label>
+              <input type="number" id="setval2" name="setval2" step=0.01><br><br>
+
+              <br><br>  <input type="submit" value="Print">
+            </form><br><br>
+            <form method="POST" action="{{url_for('layout') }}">
+            <button name="layout" type="submit">Home</button>
+            </form>
+
+
+        </div>
+    </header>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Reporting</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+     <body>
+    <header>
+      <div class="container">
+        <img src="{{url_for('static', filename='logo.png')}}" width='100' id='logo'/>
+        <h1 class="logo">Online Report Platform</h1>
+        <strong><nav>
+          <ul class="menu">
+
+            <form method="POST" action="{{url_for('r1') }}">
+            <button name="r1" type="submit">Energy Consumption Report</button>
+            </form>
+            <form method="POST" action="{{url_for('r2') }}">
+            <button name="r2" type="submit">Report 2</button>
+            </form>
+            <form method="POST" action="{{url_for('r3') }}">
+            <button name="r3" type="submit">Oil Filling Report</button>
+            </form>
+            <form method="POST" action="{{url_for('r4') }}">
+            <button name="r4" type="submit">Cross Rail Report</button>
+            </form>
+
+
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+
+    </div>
+  </body>
+</html>
